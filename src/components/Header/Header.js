@@ -8,9 +8,7 @@ import styles from './Header.module.css';
 
 function Header() {
   const id = React.useId();
-
-  // TODO: Global state?
-  const soundEnabled = true;
+  const [soundEnabled, setSoundEnabled] = React.useState(true);
 
   return (
     <header className={styles.wrapper}>
@@ -21,7 +19,7 @@ function Header() {
 
         <button
           onClick={() => {
-            // TODO: flip `soundEnabled`
+            setSoundEnabled((prev) => !prev);
           }}
         >
           {soundEnabled ? (
